@@ -17,10 +17,12 @@ public BehWait(String behName, int stopDistance) {
 public void fire() {
 	  int distLinks, distRechts;
 	  Pose relObstaclePose = new Pose();
-	  distRechts = (int) (robot.checkBox(100, -100, -2000, -2000, relObstaclePose) - robot.getRadius());
-	  distLinks = (int) (robot.checkBox(100, 100, -2000, 2000, relObstaclePose) - robot.getRadius());
+	  distLinks = (int) (robot.checkBox(100, -100, -2000, -2000, relObstaclePose) - robot.getRadius());
+	  distRechts = (int) (robot.checkBox(100, 100, -2000, 2000, relObstaclePose) - robot.getRadius());
 	  
-	  if(distLinks <= stopDistance || distRechts <= stopDistance) {
+	  while(distLinks <= stopDistance || distRechts <= stopDistance) {
+		  distLinks = (int) (robot.checkBox(100, -100, -2000, -2000, relObstaclePose) - robot.getRadius());
+		  distRechts = (int) (robot.checkBox(-100, -100, 2000, -2000, relObstaclePose) - robot.getRadius());
 		  System.out.println("Object too close, closer than " + stopDistance);
 		  System.out.println("distLinks: " + distLinks + " distRechts: " + distRechts + "\n");
 		  addDesire(new DesRotVel(0, 1.0));

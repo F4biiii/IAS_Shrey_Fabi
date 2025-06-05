@@ -11,8 +11,8 @@ public class RDMain {
 
 	public static void main(java.lang.String[] args) {
 
-		// SaphiraRobot robot = new SaphiraRobot(ECarDefines.DX3);
-		SaphiraRobot robot = new SaphiraRobot(ECarDefines.JSIM_DX3);
+		SaphiraRobot robot = new SaphiraRobot(ECarDefines.DX4);
+		// SaphiraRobot robot = new SaphiraRobot(ECarDefines.JSIM_DX3);
 
 //		robot.addLaser();
 		robot.setRobPose(new Pose(-2000,-2000,20));
@@ -29,7 +29,7 @@ public class RDMain {
 		dock.add(cv, 50);
 		dock.add(al, 75);
 		dock.add(st, 80);
-		dock.add(al2, 76);
+		//dock.add(al2, 76);
 		dock.add(wa, 90);
 		robot.add(dock);
 		
