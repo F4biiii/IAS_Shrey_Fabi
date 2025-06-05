@@ -1,0 +1,27 @@
+package thi.irobcon.app.behaviour.rightangledock;
+
+import thi.irobcon.saphira.lps.Pose;
+import thi.irobcon.saphira.reactive.Behaviour;
+
+public class BehWait extends Behaviour {
+
+	protected int stopDistance;
+	
+public BehWait(String behName, int stopDistance) {
+	super(behName);
+	this.stopDistance = stopDistance;
+}
+
+public void fire() {
+	  int dist;
+	  Pose relObstaclePose = new Pose();
+	  
+	  dist = (int) (robot.checkBox(-200, -200, 200, 200, relObstaclePose) - robot.getRadius());
+	  while(dist <= stopDistance) {
+		  System.out.println("dist in wait: ", dist);
+		  System.out.println("fuck");
+		  
+	  }
+}
+}
+

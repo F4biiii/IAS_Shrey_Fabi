@@ -1,0 +1,24 @@
+package thi.irobcon.app.behaviour.rightangledock;
+
+import thi.irobcon.saphira.reactive.Behaviour;
+
+public class BehWait extends Behaviour {
+
+	protected int stopDistance;
+	
+public BehWait(String behName, int stopDistance) {
+	super(behName);
+	this.stopDistance = stopDistance;
+}
+
+public void fire() {
+	  int dist = robot.getSonarRange(3);
+
+	  if ( dist <= stopDistance )
+	  {
+		  System.out.println( "Stop" );
+		  success();
+	  }
+}
+}
+

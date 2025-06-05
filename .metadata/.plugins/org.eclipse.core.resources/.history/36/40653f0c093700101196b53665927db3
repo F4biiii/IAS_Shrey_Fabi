@@ -1,0 +1,25 @@
+package thi.irobcon.app.behaviour.rightangledock;
+
+import thi.irobcon.saphira.reactive.Behaviour;
+
+public class BehAlign2 extends Behaviour {
+
+	protected int stopDistance;
+	protected int rotVel;
+	
+public BehAlign2(String behName, int stopDistance, int rotVel) {
+	super(behName);
+	this.stopDistance = stopDistance;
+	this.rotVel = rotVel;
+}
+
+public void fire() {
+	  int dist = robot.getSonarRange(3);
+
+	  if ( dist <= stopDistance )
+	  {
+		  System.out.println( "Turn" );
+	  }
+}
+}
+
